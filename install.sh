@@ -127,5 +127,4 @@ for JAR in "${JARS[@]}"; do
 	${MAVEN} --quiet install:install-file -Dfile="${FILE}" -DgroupId="${GROUP}" -DartifactId="${ARTIFACT}" -Dversion="${VERSION}" -Dpackaging=jar
 done
 
-$MAVEN clean install
 
