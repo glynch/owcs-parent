@@ -1,16 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Installs Oracle WebCenter Sites 12c jars into local Maven repository
+# Usage: install.sh <JSK_HOME>
 
 cd "$(dirname "$0")" || exit
 
 DIR=$(pwd)
 
 JSK_HOME=$1
-if [ -z "$JSK_HOME" ]; then
+if [[ -z "$JSK_HOME" ]]; then
 	echo "Usage: $0 <JSK_HOME>"
 	exit 1
 fi
 
-if [ ! -d "$JSK_HOME" ]; then
+if [[ ! -d "$JSK_HOME" ]]; then
 	echo "Directory $JSK_HOME does not exist"
 	exit 1
 fi
@@ -109,7 +111,7 @@ declare -a JARS=(
 
 for JAR in "${SITES_JARS[@]}"; do
 	echo "Installing ${JAR}.jar as com.oracle.sites:${JAR}:${SITES_VERSION}"
-    ${MAVEN} --quiet install:install-file -Dfile="${LIB_DIR}/${JAR}.jar" -DgroupId=com.oracle.sites -DartifactId=${JAR} -Dversion=${SITES_VERSION} -Dpackaging=jar
+    ${MAVEN} --quiet install:install-file -Dfile="${LIB_DIR}/${JAR}.jar" -DgroupId=com.oracle.sites -DartifactId="${JAR}" -Dversion="${SITES_VERSION}" -Dpackaging=jar
 done
 
 
