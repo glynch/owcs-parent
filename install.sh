@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Installs Oracle WebCenter Sites 12c jars into local Maven repository
+# Installs Oracle WebCenter Sites 12c jars and jars not available in Maven Central into local Maven repository
 # Usage: install.sh <JSK_HOME>
 
 cd "$(dirname "$0")" || exit
@@ -70,7 +70,7 @@ declare -a SITES_JARS=(
 
 # Declare an array of JARs to be installed groupId:artifactId:version
 declare -a JARS=(
-	"com.fatwire:developer-tools-command-line:12.2.1.3.0-SNAPSHOT"
+	"com.oracle.sites:developer-tools-command-line:12.2.1.3.0-SNAPSHOT"
     "com.oracle.database.observability:dms:1.1.0-150521.1418" 
     "com.oracle.sites.sitecapture.webapp:sites-sitecapture-publish-listener:12.2.1.3.0-SNAPSHOT"
     "com.oracle.sites.visitors:visitors-client:12.2.1.3.0-SNAPSHOT"
@@ -82,31 +82,27 @@ declare -a JARS=(
     "com.oracle.sites:sites-monitoring-core:12.2.1.3.0-SNAPSHOT"
     "com.sun.jersey.contribs.jersey-oauth:oauth-signature:1.1.4.1_eloqua" 
     "com.sun.xml.bind:jaxb-xjc:2.2.12-b150206.1749" 
-    "javax.annotation:javax-annotation-javax-annotation-api:12.2.1-1680713" 
     "javax.annotation:jsr250-api:1.1" 
-    "net.fckeditor:java-core:2.4" "oracle.security.importcert:importcert:11.1.2.3.0" 
+	"oracle.security.importcert:importcert:11.1.2.3.0" 
     "oracle.annotation.logging:logging-utils:2.0.0-150521.1418" 
     "oracle.i18n.js:orai18n-js:10.1.2.0.0" 
     "oracle.javatools:build-annotations:12.2130.20160817-1301" 
     "oracle.jmx.framework:jmxframework:12.2.1.0.0-20150521.1522" 
     "oracle.jrf:jrf-api:1.1.0-150521.1418" 
     "oracle.ojdl:ojdl:1.1.0-150521.1418" 
-    "oracle.security.identitystore:identitystore:2.0.0-150524.0845" 
+    "oracle.security.idm:identitystore:2.0.0-150524.0845" 
     "oracle.security.pki:oraclepki:2.0.0-150524.0845" 
-    "oracle.security:jps-api:2.0.0-150524.0845" 
-    "oracle.security:jps-common:2.0.0-150524.0845" 
-    "oracle.security:jps-internal:2.0.0-150524.0845" 
-    "oracle.security:jps-unsupported-api:2.0.0-150524.0845" 
-    "org.codehaus.jackson:org-codehaus-jackson-jackson-core-asl:12.2.1-1680713" 
-    "org.codehaus.jackson:org-codehaus-jackson-jackson-mapper-asl:12.2.1-1680713" 
+    "oracle.security.jps:jps-api:2.0.0-150524.0845" 
+    "oracle.security.jps:jps-common:2.0.0-150524.0845" 
+    "oracle.security.jps:jps-internal:2.0.0-150524.0845" 
+    "oracle.security.jps:jps-unsupported-api:2.0.0-150524.0845" 
+	"oracle.stellent.ridc:ridc:12.2.1.3.0-170323.0000.8274"
     "org.docx4j:docx4j:2.1.0"
-    "org.glassfish.hk2:org-glassfish-hk2-hk2-api:12.2.1-1680713" 
-    "org.glassfish.hk2:org-glassfish-hk2-hk2-locator:12.2.1-1680713" 
-    "org.glassfish.hk2:org-glassfish-hk2-hk2-utils:12.2.1-1680713" 
-    "org.glassfish.jersey.bundles.repackaged:org-glassfish-jersey-bundles-repackaged-jersey-guava:12.2.1-1680713"
-    "org.glassfish.jersey.bundles.repackaged:org-glassfish-jersey-media-jersey-media-multipart:12.2.1-1680713" 
-    "tangosol-coherence:coherence:12.2.1-0-0-58138" 
+	"org.jvnet.jaxb2_commons.ppp:parent-pointer-plugin:1.0"
+    "com.tangosol.coherence:coherence:12.2.1-0-0-58138" 
 	"com.oracle.sites.visitors:visitors-api:12.2.1.3.0-SNAPSHOT"
+	"relaxngDatatype:relaxngDatatype:20020414"
+	"xsdlib:xsdlib:20020414"
 	)
 
 for JAR in "${SITES_JARS[@]}"; do
