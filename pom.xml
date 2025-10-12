@@ -92,13 +92,12 @@
         <jakarta-regexp.version>1.4</jakarta-regexp.version>
         <java-core.version>2.4</java-core.version>
         <javahelp.version>2.0.05</javahelp.version>
-        <javassist.version>3.18.1-GA</javassist.version>
+        <javassist.version>3.15.0-GA</javassist.version>
         <javax-activation.version>1.1</javax-activation.version>
         <javax-annotation-api.version>1.2</javax-annotation-api.version>
         <javax-el-api.version>2.2.4</javax-el-api.version>
         <javax-json.version>1.0</javax-json.version>
         <javax-ws-rs.version>2.0</javax-ws-rs.version>
-        <javax-mail.version>1.4.7</javax-mail.version>
         <javax-inject.version>1</javax-inject.version>
         <javax-jaxb.version>2.2</javax-jaxb.version>
         <javax-json.version>1.0</javax-json.version>
@@ -107,7 +106,6 @@
         <jaxb.version>2.2</jaxb.version>
         <jaxb-core.version>2.2.11</jaxb-core.version>
         <jaxb-impl.version>2.2.11</jaxb-impl.version>
-        <jaxb-api-osgi-sources.version>2.2</jaxb-api-osgi-sources.version>
         <jaxb-xjc.version>2.2.12-b150206.1749</jaxb-xjc.version>
         <jboss-common-core.version>2.2.8.GA</jboss-common-core.version>
         <jboss-logging.version>3.1.3.GA</jboss-logging.version>
@@ -142,7 +140,8 @@
         <ognl.version>3.0.19</ognl.version>
         <ojdl.version>1.1.0-150521.1418</ojdl.version>
         <oraclepki.version>2.0.0-150524.0845</oraclepki.version>
-        <orai18n.version>10.1.2.0.0</orai18n.version>
+        <orai18n-js.version>10.1.2.0.0</orai18n-js.version>
+        <osdt.version>2.0.0-150524.0845</osdt.version>
         <osgi-resource-locator.version>1.0.1</osgi-resource-locator.version>
         <parent-pointer-plugin.version>1.0</parent-pointer-plugin.version>
         <pdfbox.version>1.6.0</pdfbox.version>
@@ -153,6 +152,7 @@
         <quartz.version>2.2.1</quartz.version>
         <relaxngDatatype.version>20020414</relaxngDatatype.version>
         <ridc.version>12.2.1.3.0-170323.0000.8274</ridc.version>
+        <rtd-ds-client.version>3.0.0.1</rtd-ds-client.version>
         <saaj-api.version>1.3.1</saaj-api.version>
         <saaj-impl.version>1.3.16</saaj-impl.version>
         <spring.version>4.3.0.RELEASE</spring.version>
@@ -534,6 +534,11 @@
                 <version>${dms.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.sigmadynamics</groupId>
+                <artifactId>rtd-ds-client</artifactId>
+                <version>${rtd-ds-client.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.sun.jersey</groupId>
                 <artifactId>jersey-core</artifactId>
                 <version>${jersey-core.version}</version>
@@ -544,7 +549,7 @@
                 <version>${oauth-signature.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.sun.phobos</groupId>
+                <groupId>jdom</groupId>
                 <artifactId>jdom</artifactId>
                 <version>${jdom.version}</version>
             </dependency>
@@ -745,8 +750,8 @@
             </dependency>
             <dependency>
                 <groupId>oracle.i18n.js</groupId>
-                <artifactId>orai18n</artifactId>
-                <version>${orai18n.version}</version>
+                <artifactId>orai18n-js</artifactId>
+                <version>${orai18n-js.version}</version>
             </dependency>
             <dependency>
                 <groupId>oracle.javatools</groupId>
@@ -768,7 +773,17 @@
                 <artifactId>ojdl</artifactId>
                 <version>${ojdl.version}</version>
             </dependency>
-              <dependency>
+            <dependency>
+                <groupId>oracle.security.crypto</groupId>
+                <artifactId>osdt_cert</artifactId>
+                <version>${osdt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>oracle.security.crypto</groupId>
+                <artifactId>osdt_core</artifactId>
+                <version>${osdt.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>oracle.security.idm</groupId>
                 <artifactId>identitystore</artifactId>
                 <version>${identitystore.version}</version>
@@ -802,6 +817,11 @@
                 <groupId>oracle.security.pki</groupId>
                 <artifactId>oraclepki</artifactId>
                 <version>${oraclepki.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>oracle.security.xmlsec</groupId>
+                <artifactId>osdt_xmlsec</artifactId>
+                <version>${osdt.version}</version>
             </dependency>
             <dependency>
                 <groupId>oracle.stellent.ridc</groupId>
@@ -1159,7 +1179,7 @@
                 <version>${parent-pointer-plugin.version}</version>
             </dependency>
              <dependency>
-                <groupId>javassist</groupId>
+                <groupId>org.javassist</groupId>
                 <artifactId>javassist</artifactId>
                 <version>${javassist.version}</version>
             </dependency>
@@ -1207,6 +1227,13 @@
                 <groupId>org.perf4j</groupId>
                 <artifactId>perf4j</artifactId>
                 <version>${perf4j.version}</version>
+                <classifier>commonslogonly</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.perf4j</groupId>
+                <artifactId>perf4j</artifactId>
+                <version>${perf4j.version}</version>
+                <classifier>log4jonly</classifier>
             </dependency>
             <dependency>
                 <groupId>org.quartz-scheduler</groupId>

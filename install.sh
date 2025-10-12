@@ -70,6 +70,7 @@ declare -a SITES_JARS=(
 
 # Declare an array of JARs to be installed groupId:artifactId:version
 declare -a JARS=(
+	"com.google.guava:guava:16.0.1"
 	"com.oracle.sites:developer-tools-command-line:12.2.1.3.0-SNAPSHOT"
     "com.oracle.database.observability:dms:1.1.0-150521.1418" 
     "com.oracle.sites.sitecapture.webapp:sites-sitecapture-publish-listener:12.2.1.3.0-SNAPSHOT"
@@ -81,9 +82,13 @@ declare -a JARS=(
     "com.oracle.sites:sites-integrations:12.2.1.3.0-SNAPSHOT"
     "com.oracle.sites:sites-monitoring-core:12.2.1.3.0-SNAPSHOT"
     "com.sun.jersey.contribs.jersey-oauth:oauth-signature:1.1.4.1_eloqua" 
-    "com.sun.xml.bind:jaxb-xjc:2.2.12-b150206.1749" 
+    "com.sun.xml.bind:jaxb-xjc:2.2.12-b150206.1749"
+	"com.fasterxml:classmate:0.8.0"
     "javax.annotation:jsr250-api:1.1" 
-	"oracle.security.importcert:importcert:11.1.2.3.0" 
+	"oracle.security.importcert:importcert:11.1.2.3.0"
+	"oracle.security.crypto:osdt_cert:2.0.0-150524.0845"
+	"oracle.security.crypto:osdt_core:2.0.0-150524.0845"
+	"oracle.security.xmlsec:osdt_xmlsec:2.0.0-150524.0845"
     "oracle.annotation.logging:logging-utils:2.0.0-150521.1418" 
     "oracle.i18n.js:orai18n-js:10.1.2.0.0" 
     "oracle.javatools:build-annotations:12.2130.20160817-1301" 
@@ -97,11 +102,12 @@ declare -a JARS=(
     "oracle.security.jps:jps-internal:2.0.0-150524.0845" 
     "oracle.security.jps:jps-unsupported-api:2.0.0-150524.0845" 
 	"oracle.stellent.ridc:ridc:12.2.1.3.0-170323.0000.8274"
+	"org.apache.pdfbox:fontbox:1.6.0"
     "org.docx4j:docx4j:2.1.0"
 	"org.jvnet.jaxb2_commons.ppp:parent-pointer-plugin:1.0"
+	"com.sigmadynamics:rtd-ds-client:3.0.0.1"
     "com.tangosol.coherence:coherence:12.2.1-0-0-58138" 
 	"com.oracle.sites.visitors:visitors-api:12.2.1.3.0-SNAPSHOT"
-	"relaxngDatatype:relaxngDatatype:20020414"
 	"xsdlib:xsdlib:20020414"
 	)
 
