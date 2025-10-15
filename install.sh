@@ -93,7 +93,7 @@ declare -a JARS=(
     "oracle.i18n.js:orai18n-js:10.1.2.0.0" 
     "oracle.javatools:build-annotations:12.2130.20160817-1301" 
     "oracle.jmx.framework:jmxframework:12.2.1.0.0-20150521.1522" 
-    "oracle.jrf:jrf-api:1.1.0-150521.1418" 
+    "com.oracle.jrf.infra:jrf-api:1.1.0-150521.1418" 
     "oracle.ojdl:ojdl:1.1.0-150521.1418" 
     "oracle.security.idm:identitystore:2.0.0-150524.0845" 
     "oracle.security.pki:oraclepki:2.0.0-150524.0845" 
@@ -104,6 +104,7 @@ declare -a JARS=(
 	"oracle.stellent.ridc:ridc:12.2.1.3.0-170323.0000.8274"
 	"org.apache.pdfbox:fontbox:1.6.0"
     "org.docx4j:docx4j:2.1.0"
+	"org.jboss.cache:jbosscache-core:2.2.2.GA"
 	"org.jvnet.jaxb2_commons.ppp:parent-pointer-plugin:1.0"
 	"com.sigmadynamics:rtd-ds-client:3.0.0.1"
     "com.tangosol.coherence:coherence:12.2.1-0-0-58138" 
@@ -113,7 +114,7 @@ declare -a JARS=(
 
 for JAR in "${SITES_JARS[@]}"; do
 	echo "Installing ${JAR}.jar as com.oracle.sites:${JAR}:${SITES_VERSION}"
-    ${MAVEN} --quiet install:install-file -Dfile="${LIB_DIR}/${JAR}.jar" -DgroupId=com.oracle.sites -DartifactId="${JAR}" -Dversion="${SITES_VERSION}" -Dpackaging=jar
+    ${MAVEN} --quiet install:install-file -Dfile="${LIB_DIR}/${JAR}.jar" -DgroupId=com.oracle.sites -DartifactId="${JAR}" -Dversion="${SITES_VERSION}" -Dpackaging=jar -DgeneratePom=true
 done
 
 
@@ -128,7 +129,7 @@ for JAR in "${JARS[@]}"; do
 		FILE="${LIB_DIR}/${ARTIFACT}.jar"
 	fi
 	echo "Installing ${FILE} as ${GROUP}:${ARTIFACT}:${VERSION}"
-	${MAVEN} --quiet install:install-file -Dfile="${FILE}" -DgroupId="${GROUP}" -DartifactId="${ARTIFACT}" -Dversion="${VERSION}" -Dpackaging=jar
+	${MAVEN} --quiet install:install-file -Dfile="${FILE}" -DgroupId="${GROUP}" -DartifactId="${ARTIFACT}" -Dversion="${VERSION}" -Dpackaging=jar -DgeneratePom=true
 done
 
 

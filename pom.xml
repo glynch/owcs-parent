@@ -88,7 +88,7 @@
         <inspektr.version>1.0.7.GA</inspektr.version>
         <jackson.version>2.7.9</jackson.version>
         <jackson-databind.version>2.7.9.1</jackson-databind.version>
-        <jackson-asl.version>12.2.1-1680713</jackson-asl.version>
+        <jackson-asl.version>1.9.11</jackson-asl.version>
         <jakarta-regexp.version>1.4</jakarta-regexp.version>
         <java-core.version>2.4</java-core.version>
         <javahelp.version>2.0.05</javahelp.version>
@@ -215,7 +215,7 @@
             <dependency>
                 <groupId>com.oracle.sites</groupId>
                 <artifactId>sites-contentcloud-integration</artifactId>
-                <version>${sites.version}</version>
+                <version>${sites.version}-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.sites</groupId>
@@ -240,12 +240,12 @@
             <dependency>
                 <groupId>com.oracle.sites</groupId>
                 <artifactId>sites-eloqua-integration</artifactId>
-                <version>${sites.version}</version>
+                <version>${sites.version}-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.sites</groupId>
                 <artifactId>sites-enrichment</artifactId>
-                <version>${sites.version}</version>
+                <version>${sites.version}-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.sites</groupId>
@@ -270,7 +270,7 @@
             <dependency>
                 <groupId>com.oracle.sites</groupId>
                 <artifactId>sites-monitoring-core</artifactId>
-                <version>${sites.version}</version>
+                <version>${sites.version}-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.sites</groupId>
@@ -330,7 +330,7 @@
             <dependency>
                 <groupId>com.oracle.sites.sitecapture.webapp</groupId>
                 <artifactId>sites-sitecapture-publish-listener</artifactId>
-                <version>${sites.version}</version>
+                <version>${sites.version}-SNAPSHOT</version>
             </dependency>
              <dependency>
                 <groupId>com.oracle.sites</groupId>
@@ -385,7 +385,7 @@
              <dependency>
                 <groupId>com.oracle.sites.visitors</groupId>
                 <artifactId>visitors-api</artifactId>
-                <version>${sites.version}</version>
+                <version>${sites.version}-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.oracle.sites.visitors</groupId>
@@ -764,7 +764,7 @@
                 <version>${jmxframework.version}</version>
             </dependency>
              <dependency>
-                <groupId>oracle.jrf</groupId>
+                <groupId>com.oracle.jrf.infra</groupId>
                 <artifactId>jrf-api</artifactId>
                 <version>${jrf-api.version}</version>
             </dependency>
